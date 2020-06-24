@@ -2,11 +2,13 @@ package com.example.easyloan.management.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "tbl_family_type")
 public class FamilyType {
@@ -17,5 +19,4 @@ public class FamilyType {
 
     @Column(name = "family_type" , length = 10)
     private String family_type;
-
 }

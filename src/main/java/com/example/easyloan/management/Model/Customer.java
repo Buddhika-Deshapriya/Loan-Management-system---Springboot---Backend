@@ -1,36 +1,47 @@
 package com.example.easyloan.management.Model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Data
+@NoArgsConstructor
 @AllArgsConstructor
+@Data
+@ToString
 @Entity
 @Table(name = "tbl_customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customer_id;
+    private Integer customer_id;
 
     @ManyToOne
+    @Column(name = "gender_type", length = 2)
     private Gender gender_type;
 
     @ManyToOne
-    private Title title_id;
+    @Column(name = "title", length = 2)
+    private Title title;
 
     @ManyToOne
+    @Column(name = "membership_type", length = 2)
     private MembershipType membership_type;
 
     @ManyToOne
+    @Column(name = "family_type", length = 2)
     private FamilyType family_type;
 
     @ManyToOne
+    @Column(name = "customer_status", length = 2)
     private CustomerStatus customer_status;
 
     @ManyToOne
+    @Column(name = "married_status", length = 2)
     private MarriedStatus married_status;
 
     @Column(name = "membership_no" , length = 50)
@@ -63,7 +74,7 @@ public class Customer {
     @Column(name = "email" , length = 50)
     private String email;
 
-    @Column(name = "=family_income" , length = 30)
+    @Column(name = "family_income" , length = 30)
     private float familyIncome;
 
     @Column(name = "total_members" , length = 5)
@@ -74,5 +85,6 @@ public class Customer {
 
     @Column(name = "passport" , length = 30)
     private String passport;
+
 
 }
