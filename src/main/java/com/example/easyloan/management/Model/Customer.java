@@ -18,31 +18,31 @@ import java.util.Date;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customer_id;
+    private Integer id;
 
-    @ManyToOne
-    @Column(name = "gender_type", length = 2)
-    private Gender gender_type;
+    @OneToOne
+    @JoinColumn(name = "gender")
+    private Gender gender;
 
-    @ManyToOne
-    @Column(name = "title", length = 2)
+    @OneToOne
+    @JoinColumn(name = "title")
     private Title title;
 
-    @ManyToOne
-    @Column(name = "membership_type", length = 2)
-    private MembershipType membership_type;
+    @OneToOne
+    @JoinColumn(name = "membershipType")
+    private MembershipType membershipType;
 
-    @ManyToOne
-    @Column(name = "family_type", length = 2)
-    private FamilyType family_type;
+    @OneToOne
+    @JoinColumn(name = "familyType")
+    private FamilyType familyType;
 
-    @ManyToOne
-    @Column(name = "customer_status", length = 2)
-    private CustomerStatus customer_status;
+    @OneToOne
+    @JoinColumn(name = "customerStatus")
+    private CustomerStatus customerStatus;
 
-    @ManyToOne
-    @Column(name = "married_status", length = 2)
-    private MarriedStatus married_status;
+    @OneToOne
+    @JoinColumn(name = "marriedStatus")
+    private MarriedStatus marriedStatus;
 
     @Column(name = "membership_no" , length = 50)
     private String membership_no;

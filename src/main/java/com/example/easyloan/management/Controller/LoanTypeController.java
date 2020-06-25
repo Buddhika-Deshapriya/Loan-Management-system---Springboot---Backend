@@ -40,7 +40,7 @@ public class LoanTypeController {
     }
 
     @RequestMapping("/delete/{id}")
-    public String deleteLoanType(@PathVariable Integer id) {
+    public String deleteLoanType(@PathVariable Integer id){
         return loanTypeService.deleteLoanType(id);
     }
 

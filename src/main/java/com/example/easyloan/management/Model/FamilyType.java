@@ -15,8 +15,8 @@ public class FamilyType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int family_type_id;
+    private Integer id;
 
-    @Column(name = "family_type" , length = 10)
-    private String family_type;
+    @Column(name = "type" , length = 10)
+    private String type;
 }

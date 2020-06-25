@@ -18,10 +18,10 @@ public class LoanType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int loanTypeId;
+    private Integer id;
 
-    @ManyToOne
-    @Column(name = "status" , length = 2)
+    @OneToOne
+    @JoinColumn(name = "status_id")
     private LoanTypeStatus status;
 
     @Column(name = "loan_type" , length = 30)

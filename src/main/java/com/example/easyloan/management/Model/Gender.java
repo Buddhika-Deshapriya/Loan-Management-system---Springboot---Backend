@@ -15,10 +15,10 @@ public class Gender {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int gender_id;
+    private Integer id;
 
-    @Column(name = "gender_type" , length = 15)
-    private String gender_type;
+    @Column(name = "type" , length = 15)
+    private String type;
 
 
 

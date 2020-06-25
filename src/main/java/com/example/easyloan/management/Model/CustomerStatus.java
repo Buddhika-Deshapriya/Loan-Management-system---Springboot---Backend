@@ -16,9 +16,9 @@ public class CustomerStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int status_id;
+    private Integer id;
 
-    @Column(name = "status" , length = 20)
-    private String status;
+    @Column(name = "type" , length = 20)
+    private String type;
 
 }

@@ -15,10 +15,10 @@ public class Title {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customer_id;
+    private Integer id;
 
-    @Column(name = "title_type" , length = 10)
-    private String title_type;
+    @Column(name = "type" , length = 10)
+    private String type;
 
 
 }

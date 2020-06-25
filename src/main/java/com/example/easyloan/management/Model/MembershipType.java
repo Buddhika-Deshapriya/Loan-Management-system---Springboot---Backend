@@ -15,10 +15,10 @@ public class MembershipType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int membership_type_id;
+    private Integer id;
 
-    @Column(name = "membership_type" , length = 20)
-    private String membership_type;
+    @Column(name = "type" , length = 20)
+    private String type;
 
 
 }
