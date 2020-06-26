@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Table(name = "tbl_loan_status")
 public class LoanStatus {
 
+    //If the loan pending, approved, released or rejected!
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

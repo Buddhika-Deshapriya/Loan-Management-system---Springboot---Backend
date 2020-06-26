@@ -16,13 +16,15 @@ import java.util.Date;
 @Table(name = "tbl_loan_type")
 public class LoanType {
 
+    //Loan types witch are can apply to loans!
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //If the loan type active or inactive!
     @OneToOne
     @JoinColumn(name = "status_id")
-    private LoanTypeStatus status;
+    private CommonStatus status;
 
     @Column(name = "loan_type" , length = 30)
     private String loanType;

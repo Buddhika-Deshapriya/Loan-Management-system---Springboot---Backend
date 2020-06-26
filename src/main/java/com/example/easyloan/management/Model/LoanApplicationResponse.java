@@ -6,7 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,13 +26,7 @@ public class LoanApplicationResponse {
     @Column(name = "acceptedAmount", length = 30)
     private float acceptedAmount;
 
-//    @OneToOne
-//    @JoinColumn(name = "loanApplicationId")
-//    private LoanApplication loanApplication;
 
-//    @OneToMany(targetEntity = LoanApplicationResponse.class, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "loanApplicationId" ,updatable = false)
-//    private List<LoanApplication> loanApplication;
 
     @OneToOne
     @JoinColumn(name = "loanStatusId")

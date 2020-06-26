@@ -20,26 +20,32 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //Gender of the customer from gender table!
     @OneToOne
     @JoinColumn(name = "gender")
     private Gender gender;
 
+    //Title of the customer from title table!
     @OneToOne
     @JoinColumn(name = "title")
     private Title title;
 
+    //Membership type of the customer from membership type table!
     @OneToOne
     @JoinColumn(name = "membershipType")
     private MembershipType membershipType;
 
+    //Family type of the customer from family type table!
     @OneToOne
     @JoinColumn(name = "familyType")
     private FamilyType familyType;
 
+    //If the customer is working or no longer working with the system!
     @OneToOne
     @JoinColumn(name = "customerStatus")
-    private CustomerStatus customerStatus;
+    private CommonStatus customerStatus;
 
+    //Mariel status of the customer from married status table!
     @OneToOne
     @JoinColumn(name = "marriedStatus")
     private MarriedStatus marriedStatus;

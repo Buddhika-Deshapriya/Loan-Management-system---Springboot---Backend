@@ -7,8 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+
+
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -39,15 +42,20 @@ public class LoanApplication {
 
     private String calculationNo;
 
-//    @Column(name = "membershipNo" , length = 50)
-//    private String membershipNo;
-   @ManyToMany(fetch = FetchType.LAZY)
-   @JoinTable(
-           name = "tbl_customer_loan_application",
-           joinColumns = @JoinColumn( name  ="application_id"),
-           inverseJoinColumns = @JoinColumn(name ="customer_id"))
-   private Set<Customer> customers = new HashSet<>();
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "tbl_customer_loan_application",
+            joinColumns = @JoinColumn( name  ="application_id"),
+            inverseJoinColumns = @JoinColumn(name ="customer_id"))
+    private Set<Customer> customers = new HashSet<>();
+
+    //Rajitha
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "tbl_loan_app_response",
+            joinColumns = @JoinColumn(name = "app_id"),
+            inverseJoinColumns = @JoinColumn(name = "response_id"))
+    private Set<LoanApplicationResponse> loanApplicationResponse = new HashSet<>();
 
 
     @Column(name = "loanAmount" , length = 30)

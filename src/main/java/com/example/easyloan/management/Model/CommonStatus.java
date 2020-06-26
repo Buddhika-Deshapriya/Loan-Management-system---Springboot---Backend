@@ -11,9 +11,10 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tbl_customer_status")
-public class CustomerStatus {
+@Table(name = "tbl_common_status")
+public class CommonStatus {
 
+    //If the customer active or inactive with the system!
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

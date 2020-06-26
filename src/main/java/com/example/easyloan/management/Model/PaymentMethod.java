@@ -1,23 +1,23 @@
 package com.example.easyloan.management.Model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 @Entity
-@Table(name = "tbl_loan_type_status")
-public class LoanTypeStatus {
+@Table(name = "tbl_payment_method")
+public class PaymentMethod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(name = "type" , length = 20)
-    private String type;
+    private String method;
 }
