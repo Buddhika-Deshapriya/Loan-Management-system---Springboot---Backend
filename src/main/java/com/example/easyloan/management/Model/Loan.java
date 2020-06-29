@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,33 +21,6 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne
-    @JoinColumn(name = "customerId")
-    private Customer customerId;
-
-    @OneToOne
-    @JoinColumn(name = "loanTypeId")
-    private LoanType loanTypeId;
-
-    @OneToOne
-    @JoinColumn(name = "rentalTypeId")
-    private RentalType rentalTypeId;
-
-    @OneToOne
-    @JoinColumn(name = "paymentMethodId")
-    private PaymentMethod paymentMethodId;
-
-    @OneToOne
-    @JoinColumn(name = "loanApplicationId")
-    private LoanApplication loanApplicationId;
-
-    @OneToOne
-    @JoinColumn(name = "calculationNo")
-    private LoanApplication calculationNo;
-
-    @OneToOne
-    @JoinColumn(name = "membershipNo")
-    private Customer membershipNo;
 
     @OneToOne
     @JoinColumn(name = "status")
@@ -56,15 +30,12 @@ public class Loan {
     private String description;
 
     @Column(name = "amount" , length = 30)
-    private float amount;
-
-    @Column(name = "noOfRentals" , length = 5)
-    private Integer noOfRentals;
-
-    @Column(name = "interestRate" , length = 10)
-    private float interestRate;
+    private float authorizedAmount;
 
     @Column(name = "createdDate" , length = 30)
     private Date createdDate;
+
+    //user field
+
 
 }

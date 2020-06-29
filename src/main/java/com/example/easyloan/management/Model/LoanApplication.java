@@ -2,6 +2,8 @@ package com.example.easyloan.management.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,7 @@ import java.util.*;
 @ToString
 @Entity
 @Table(name = "tbl_loan_application")
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class LoanApplication {
 
     @Id
@@ -75,4 +78,7 @@ public class LoanApplication {
     //Rajitha
     @ManyToMany(mappedBy = "loanApplications")
     public List<LoanApplicationResponse> loanApplicationResponses;
+
+    @ManyToMany(mappedBy = "loanApplicationsList")
+    public List<LoanApplicationDirectorResponse> loanApplicationDirectorResponses;
 }

@@ -28,14 +28,14 @@ public class CustomerController {
     public Customer addBook(@RequestBody Customer customer) {
 
         //Validate membership number
-        String enteredNumber = customer.getMembership_no();
+ //       String membership_no = customer.getMembership_no();
         //System.out.println(enteredNumber);
-        if(enteredNumber !=  null){
-            Customer customerObj = customerService.fetchMemershipNo(enteredNumber);
-            if(customerObj != null){
-                throw new ApiRequestException("Membership number exists!");
-            }
-        }
+//        if(membership_no !=  null){
+//            Customer customerObj = customerService.fetchMemershipNo(membership_no);
+//            if(customerObj != null){
+//                throw new ApiRequestException("Membership number exists!");
+//            }
+//        }
         Customer  customerObj = null;
         customerObj = customerService.addCustomer(customer);
         return customerObj;
@@ -50,7 +50,6 @@ public class CustomerController {
     @RequestMapping("/list")
     public List<Customer> customerList(){
         return customerService.customerList();
-
     }
 
     @RequestMapping("/delete/{id}")

@@ -44,8 +44,8 @@ public class CustomerServiceImpl implements CustomerService {
         return "{'Message' : 'Customer Deleted Successfully!'}";
     }
 
-    @Override
-    public Customer fetchMemershipNo(String enteredNumber) {
-        return customerRepository.findByMembership_no(enteredNumber);
-    }
+//    @Override
+//    public Customer fetchMemershipNo(String enteredNumber) {
+//        return customerRepository.findByMembership_no(enteredNumber);
+//    }
 }

@@ -8,30 +8,23 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
 @Entity
-@Table(name = "tbl_loan_application_response")
+@Table(name = "tbl_loan_application_director_response")
 @JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
-public class LoanApplicationResponse {
+public class LoanApplicationDirectorResponse {
 
-    //Response of the loan application after applied!
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "acceptedAmount", length = 30)
     private float acceptedAmount;
-
-    //date field
-
-    //user field
 
     //If the loan approved, pending , released or rejected
     @OneToOne
@@ -42,7 +35,10 @@ public class LoanApplicationResponse {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "authorizedPerson" , length = 30)
+    private Integer authorizedPerson;
+
     @ManyToMany
     @JoinTable
-    private List<LoanApplication> loanApplications;
+    private List<LoanApplication> loanApplicationsList;
 }
