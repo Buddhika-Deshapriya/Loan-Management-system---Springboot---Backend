@@ -1,13 +1,18 @@
 package com.example.easyloan.management.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,6 +20,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "tbl_customer")
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -91,6 +97,10 @@ public class Customer {
 
     @Column(name = "passport" , length = 30)
     private String passport;
+
+    //Rajitha
+    @ManyToMany(mappedBy = "customers")
+    public List<LoanApplication> loanApplications;
 
 
 }

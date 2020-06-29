@@ -43,4 +43,9 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.deleteById(id);
         return "{'Message' : 'Customer Deleted Successfully!'}";
     }
+
+    @Override
+    public Customer fetchMemershipNo(String enteredNumber) {
+        return customerRepository.findByMembership_no(enteredNumber);
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.easyloan.management.Controller;
 
+import com.example.easyloan.management.Exception.ApiRequestException;
 import com.example.easyloan.management.Model.Customer;
 import com.example.easyloan.management.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,21 @@ public class CustomerController {
 
 
     @RequestMapping("/add")
-    public Customer addBook(@RequestBody Customer customer) throws Exception {
-        return customerService.addCustomer(customer);
+    public Customer addBook(@RequestBody Customer customer) {
+
+        //Validate membership number
+        String enteredNumber = customer.getMembership_no();
+        //System.out.println(enteredNumber);
+        if(enteredNumber !=  null){
+            Customer customerObj = customerService.fetchMemershipNo(enteredNumber);
+            if(customerObj != null){
+                throw new ApiRequestException("Membership number exists!");
+            }
+        }
+        Customer  customerObj = null;
+        customerObj = customerService.addCustomer(customer);
+        return customerObj;
+
     }
 
     @RequestMapping("/list/{id}")

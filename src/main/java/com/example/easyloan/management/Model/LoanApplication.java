@@ -1,18 +1,14 @@
 package com.example.easyloan.management.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-
-
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,36 +22,29 @@ public class LoanApplication {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //rental type of the loan (monthly, annually, quarter)!
     @OneToOne
     @JoinColumn(name = "rentalTypeId")
     private RentalType rentalTypeId;
 
+    //loan type of the loan (mid term, long term, etc)!
     @OneToOne
     @JoinColumn(name = "loanTypeId")
     private LoanType loanTypeId;
 
-    @OneToOne
-    @JoinColumn(name = "loanStatusId")
-    private LoanStatus loanStatusId;
+//    @OneToOne
+//    @JoinColumn(name = "loanStatusId")
+//    private LoanStatus loanStatusId;
 
     private String applicationNo;
 
     private String calculationNo;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private LoanApplicationResponse loanApplicationResponse;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "tbl_customer_loan_application",
-            joinColumns = @JoinColumn( name  ="application_id"),
-            inverseJoinColumns = @JoinColumn(name ="customer_id"))
-    private Set<Customer> customers = new HashSet<>();
 
-    //Rajitha
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "tbl_loan_app_response",
-            joinColumns = @JoinColumn(name = "app_id"),
-            inverseJoinColumns = @JoinColumn(name = "response_id"))
-    private Set<LoanApplicationResponse> loanApplicationResponse = new HashSet<>();
+
 
 
     @Column(name = "loanAmount" , length = 30)
@@ -76,7 +65,14 @@ public class LoanApplication {
     @Column(name = "description" , length = 150)
     private String description;
 
-    @Column(name = "createdDate" , length = 20)
+    @Column(name = "createdDate" , length = 30)
     private Date createdDate;
 
+    @ManyToMany
+    @JoinTable
+    private List<Customer> customers;
+
+    //Rajitha
+    @ManyToMany(mappedBy = "loanApplications")
+    public List<LoanApplicationResponse> loanApplicationResponses;
 }

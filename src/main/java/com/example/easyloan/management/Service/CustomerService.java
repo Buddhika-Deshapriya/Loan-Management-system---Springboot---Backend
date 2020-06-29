@@ -14,4 +14,6 @@ public interface CustomerService {
     Customer addCustomer(Customer customer);
 
     String deleteCustomer(Integer id);
+
+    Customer fetchMemershipNo(String enteredNumber);
 }
