@@ -1,8 +1,10 @@
 package com.example.easyloan.management.Model;
 
 
+import com.example.easyloan.management.Service.LoanCashReleaseService;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,12 +45,6 @@ public class LoanApplication {
 
     private String calculationNo;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private LoanApplicationResponse loanApplicationResponse;
-
-
-
-
 
     @Column(name = "loanAmount" , length = 30)
     private float loanAmount;
@@ -81,4 +77,15 @@ public class LoanApplication {
 
     @ManyToMany(mappedBy = "loanApplicationsList")
     public List<LoanApplicationDirectorResponse> loanApplicationDirectorResponses;
+
+
+    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "loanApplication")
+    private LoanCashRelease loanCashRelease;
+
+
 }
