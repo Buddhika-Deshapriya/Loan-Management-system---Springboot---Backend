@@ -13,6 +13,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,8 +37,8 @@ public class LoanCashRelease  {
     @Column(name = "authorizedPerson" , length = 30)
     private Integer authorizedPerson;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "loan_application_id")
-    private LoanApplication loanApplication;
+    @ManyToMany
+    @JoinTable
+    private List<LoanApplication> loanApps;
 
 }

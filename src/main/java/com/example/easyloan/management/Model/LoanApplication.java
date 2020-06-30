@@ -81,11 +81,8 @@ public class LoanApplication {
 
     //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "loanApplication")
-    private LoanCashRelease loanCashRelease;
+    @ManyToMany(mappedBy = "loanApps")
+    public List<LoanCashRelease> loanCashReleases;
 
 
 }

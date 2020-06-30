@@ -102,5 +102,8 @@ public class Customer {
     @ManyToMany(mappedBy = "customers")
     public List<LoanApplication> loanApplications;
 
+    @ManyToMany(mappedBy = "customers")
+    public List<CustomerAssets> customerAssets;
+
 
 }
