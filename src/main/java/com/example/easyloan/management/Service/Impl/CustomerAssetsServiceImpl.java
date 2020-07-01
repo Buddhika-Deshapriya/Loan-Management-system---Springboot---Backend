@@ -2,7 +2,6 @@ package com.example.easyloan.management.Service.Impl;
 
 import com.example.easyloan.management.Model.CustomerAssets;
 import com.example.easyloan.management.Repository.CustomerAssetsRepository;
-import com.example.easyloan.management.Repository.CustomerRepository;
 import com.example.easyloan.management.Service.CustomerAssetsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,5 +38,6 @@ public class CustomerAssetsServiceImpl implements CustomerAssetsService {
     @Override
     public String deleteCustomerAssets(Integer id) {
         customerAssetsRepository.deleteById(id);
-        return "{'Message' : 'Customer Assets Deleted Successfully!'}";    }
+        return "{'Message' : 'Customer Assets Deleted Successfully!'}";
+    }
 }
