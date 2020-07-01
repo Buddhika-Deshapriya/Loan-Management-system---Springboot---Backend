@@ -1,7 +1,6 @@
 package com.example.easyloan.management.Service;
 
 import com.example.easyloan.management.Model.LoanApplicationDirectorResponse;
-import com.example.easyloan.management.Model.LoanApplicationResponse;
 
 import java.util.List;
 import java.util.Optional;
