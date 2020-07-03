@@ -41,4 +41,6 @@ public class LoanCashRelease  {
     @JoinTable
     private List<LoanApplication> loanApps;
 
+
+
 }

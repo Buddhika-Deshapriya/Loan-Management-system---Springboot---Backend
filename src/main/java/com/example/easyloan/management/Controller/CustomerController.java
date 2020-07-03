@@ -1,6 +1,5 @@
 package com.example.easyloan.management.Controller;
 
-import com.example.easyloan.management.Exception.ApiRequestException;
 import com.example.easyloan.management.Model.Customer;
 import com.example.easyloan.management.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ public class CustomerController {
 
 
     @RequestMapping("/add")
-    public Customer addBook(@RequestBody Customer customer) {
+    public Customer addCustomer(@RequestBody Customer customer) {
 
         //Validate membership number
  //       String membership_no = customer.getMembership_no();
