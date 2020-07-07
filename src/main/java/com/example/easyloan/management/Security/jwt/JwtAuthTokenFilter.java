@@ -1,6 +1,6 @@
-package com.example.easyloan.management.Config;
+package com.example.easyloan.management.Security.jwt;
 
-import com.example.easyloan.management.Service.Impl.UserDetailsServiceImpl;
+import com.example.easyloan.management.Security.services.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

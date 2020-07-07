@@ -1,5 +1,4 @@
-package com.example.easyloan.management.Config;
-
+package com.example.easyloan.management.Security.jwt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +13,7 @@ import java.io.IOException;
 
 @Component
 public class JwtAuthEntryPoint implements AuthenticationEntryPoint {
+
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthEntryPoint.class);
 
     @Override

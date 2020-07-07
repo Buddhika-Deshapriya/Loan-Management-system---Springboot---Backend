@@ -1,7 +1,5 @@
-package com.example.easyloan.management.Config;
+package com.example.easyloan.management.Security.jwt;
 
-
-import com.example.easyloan.management.Service.Impl.UserPrinciple;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +14,10 @@ public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
-    @Value("${rajitha.app.jwtSecret}")
+    @Value("${buddhika.app.jwtSecret}")
     private String jwtSecret;
 
-    @Value("${rajitha.app.jwtExpiration}")
+    @Value("${buddhika.app.jwtExpiration}")
     private int jwtExpiration;
 
     public String generateJwtToken(Authentication authentication) {

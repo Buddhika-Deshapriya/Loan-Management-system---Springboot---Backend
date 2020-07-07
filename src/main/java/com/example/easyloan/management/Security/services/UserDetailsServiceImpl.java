@@ -1,4 +1,4 @@
-package com.example.easyloan.management.Service.Impl;
+package com.example.easyloan.management.Security.services;
 
 import com.example.easyloan.management.Model.User;
 import com.example.easyloan.management.Repository.UserRepository;
@@ -7,8 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -18,13 +17,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String username)
-            throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() ->
-                        new UsernameNotFoundException("User Not Found with -> username or email : " + username)
-                );
+        User user = userRepository.findByUsername(username).orElseThrow(
+                () -> new UsernameNotFoundException("User Not Found with -> username or email : " + username));
 
         return UserPrinciple.build(user);
     }

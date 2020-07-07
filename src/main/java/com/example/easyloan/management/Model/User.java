@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,9 +29,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(name = "name" , length = 50)
-    private String Name;
+    
+    private String firstName;
+    
+    private String middleName;
+    
+    private  String lastName;
+    
+    private String address;
+    
+    private Integer nic;
+    
+    private Date dob;
 
     @Column(name = "email" , length = 50)
     private String email;
