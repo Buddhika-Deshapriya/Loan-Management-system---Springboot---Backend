@@ -1,4 +1,4 @@
-package com.example.easyloan.management.Message.response;
+package com.example.easyloan.management.Message.Response;
 
 public class ResponseMessage {
     private String message;

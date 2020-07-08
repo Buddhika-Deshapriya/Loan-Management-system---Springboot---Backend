@@ -3,6 +3,7 @@ package com.example.easyloan.management.Controller;
 import com.example.easyloan.management.Model.Customer;
 import com.example.easyloan.management.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,11 +43,13 @@ public class CustomerController {
     }
 
     @RequestMapping("/list/{id}")
+    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN')")
     public Optional<Customer> findById(@PathVariable Integer id){
         return customerService.findById(id);
     }
 
     @RequestMapping("/list")
+    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN')")
     public List<Customer> customerList(){
         return customerService.customerList();
     }

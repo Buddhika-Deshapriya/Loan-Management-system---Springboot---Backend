@@ -1,4 +1,4 @@
-package com.example.easyloan.management.Message.request;
+package com.example.easyloan.management.Message.Request;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

@@ -1,5 +1,6 @@
 package com.example.easyloan.management.Security.jwt;
 
+import com.example.easyloan.management.Security.services.UserPrinciple;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
