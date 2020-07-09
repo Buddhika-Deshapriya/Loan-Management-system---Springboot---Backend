@@ -4,14 +4,13 @@ import com.example.easyloan.management.Model.Customer;
 import com.example.easyloan.management.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
@@ -25,7 +24,7 @@ public class CustomerController {
 
 
     @RequestMapping("/add")
-    public Customer addCustomer(@RequestBody Customer customer) {
+    public Customer addCustomer(@Valid @RequestBody Customer customer) {
 
         //Validate membership number
  //       String membership_no = customer.getMembership_no();

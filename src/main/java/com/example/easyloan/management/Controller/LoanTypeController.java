@@ -3,6 +3,7 @@ package com.example.easyloan.management.Controller;
 import com.example.easyloan.management.Model.LoanType;
 import com.example.easyloan.management.Service.LoanTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class LoanTypeController {
 
 
     @RequestMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public LoanType addLoanType(@RequestBody LoanType loanType) throws Exception {
         return loanTypeService.addLoanType(loanType);
     }
@@ -34,6 +36,7 @@ public class LoanTypeController {
     }
 
     @RequestMapping("/list")
+//    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('FRO')")
     public List<LoanType> loanTypeList(){
         return loanTypeService.loanTypeList();
 

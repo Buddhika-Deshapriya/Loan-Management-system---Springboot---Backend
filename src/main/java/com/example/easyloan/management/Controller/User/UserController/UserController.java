@@ -8,6 +8,7 @@ import com.example.easyloan.management.Model.User;
 import com.example.easyloan.management.Repository.RoleRepository;
 import com.example.easyloan.management.Repository.UserRepository;
 import com.example.easyloan.management.Security.jwt.JwtProvider;
+import com.example.easyloan.management.Security.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,9 @@ public class UserController {
     UserRepository userRepository;
 
     @Autowired
+    UserService userService;
+
+    @Autowired
     RoleRepository roleRepository;
 
     @Autowired
@@ -40,13 +44,14 @@ public class UserController {
     PasswordEncoder encoder;
 
     @PostMapping("/add")
+//    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> addUser(@Valid @RequestBody UserCreateForm signUpRequest) {
-        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+        if (userService.existsByUsername(signUpRequest.getUsername())) {
             return new ResponseEntity<>(new ResponseMessage("Fail -> Username is already taken!"),
                     HttpStatus.BAD_REQUEST);
         }
 
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
+        if (userService.existsByEmail(signUpRequest.getEmail())) {
             return new ResponseEntity<>(new ResponseMessage("Fail -> Email is already in use!"),
                     HttpStatus.BAD_REQUEST);
         }
@@ -109,10 +114,12 @@ public class UserController {
         });
 
         user.setRoles(roles);
-        userRepository.save(user);
+        userService.save(user);
 
         return new ResponseEntity<>(new ResponseMessage("User registered successfully!"), HttpStatus.OK);
     }
+
+
 
 
 }

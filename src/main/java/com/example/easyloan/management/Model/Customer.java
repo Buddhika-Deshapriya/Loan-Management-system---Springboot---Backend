@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.List;
 
@@ -57,39 +58,61 @@ public class Customer {
     @Column(name = "membership_no" , length = 50)
     private String membership_no;
 
+    @NotEmpty(message = "Name may not be empty")
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "first_name" , length = 50)
     private String first_name;
 
+    @NotEmpty(message = "Name may not be empty")
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "middle_name" , length = 50)
     private String middle_name;
 
+    @NotEmpty(message = "Name may not be empty")
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "last_name" , length = 50)
     private String last_name;
 
+    @NotNull(message = "DOB may not be empty")
     @Column(name = "dob" , length = 20)
     private Date dob;
 
-    @Column(name = "nic" , length = 15)
+    @NotEmpty(message = "NIC may not be empty")
+    @Size(min = 10, max = 12, message = "NIC must be between 10 and 12 characters long")
+    @Column(name = "nic" , length = 12)
     private String nic;
 
+    @NotEmpty(message = "Address may not be empty")
     @Column(name = "address" , length = 100)
     private String address;
 
-    @Column(name = "telephone" , length = 15)
-    private int telephone;
+    @NotNull(message = "Telephone may not be empty")
+//    @Length(min = 10, max = 12, message = "Telephone must be between 10 and 12 characters long")
+    @Min(10)
+    @Max(12)
+    @Column(name = "telephone")
+    private long telephone;
 
-    @Column(name = "mobile" , length = 15)
-    private int mobile;
+    @NotNull(message = "Mobile may not be empty")
+//    @Length(min = 10, max = 12, message = "Mobile must be between 10 and 12 characters long")
+    @Min(10)
+    @Max(12)
+    @Column(name = "mobile")
+    private long mobile;
 
-    @Column(name = "email" , length = 50)
+    @NotEmpty(message = "Email may not be empty")
+    @Column(name = "email" , length = 60)
     private String email;
 
+    @NotB(message = "Family income may not be empty")
     @Column(name = "family_income" , length = 30)
     private float familyIncome;
 
+    @NotNull(message = "Total members may not be empty")
     @Column(name = "total_members" , length = 5)
     private int total_members;
 
+    @NotNull(message = "Income may not be empty")
     @Column(name = "income" , length = 30)
     private float income;
 
