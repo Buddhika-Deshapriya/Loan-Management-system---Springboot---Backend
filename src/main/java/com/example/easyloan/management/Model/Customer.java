@@ -58,63 +58,64 @@ public class Customer {
     @Column(name = "membership_no" , length = 50)
     private String membership_no;
 
-    @NotEmpty(message = "Name may not be empty")
+    @NotEmpty(message = "Required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "first_name" , length = 50)
     private String first_name;
 
-    @NotEmpty(message = "Name may not be empty")
+    @NotEmpty(message = "Required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "middle_name" , length = 50)
     private String middle_name;
 
-    @NotEmpty(message = "Name may not be empty")
+//    @NotEmpty(message = "Required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "last_name" , length = 50)
     private String last_name;
 
-    @NotNull(message = "DOB may not be empty")
+    @NotNull(message = "Required")
     @Column(name = "dob" , length = 20)
     private Date dob;
 
-    @NotEmpty(message = "NIC may not be empty")
+    @NotNull(message = "Required")
     @Size(min = 10, max = 12, message = "NIC must be between 10 and 12 characters long")
     @Column(name = "nic" , length = 12)
     private String nic;
 
-    @NotEmpty(message = "Address may not be empty")
+    @NotNull(message = "Required")
     @Column(name = "address" , length = 100)
     private String address;
 
-    @NotNull(message = "Telephone may not be empty")
+    @NotNull(message = "Required")
 //    @Length(min = 10, max = 12, message = "Telephone must be between 10 and 12 characters long")
     @Min(10)
     @Max(12)
     @Column(name = "telephone")
-    private long telephone;
+    private Long telephone;
 
-    @NotNull(message = "Mobile may not be empty")
+    @NotNull(message = "Required")
 //    @Length(min = 10, max = 12, message = "Mobile must be between 10 and 12 characters long")
     @Min(10)
     @Max(12)
     @Column(name = "mobile")
-    private long mobile;
+    private Long mobile;
 
-    @NotEmpty(message = "Email may not be empty")
     @Column(name = "email" , length = 60)
     private String email;
 
-    @NotB(message = "Family income may not be empty")
+    @NotNull(message = "Required")
+    //@Min( message = "Required", value =  0)
     @Column(name = "family_income" , length = 30)
-    private float familyIncome;
+    private Float familyIncome;
 
-    @NotNull(message = "Total members may not be empty")
+    @NotNull(message = "Required")
     @Column(name = "total_members" , length = 5)
-    private int total_members;
+    private Integer total_members;
 
-    @NotNull(message = "Income may not be empty")
+    @NotNull(message = "Required")
+    //@Min( message = "Required", value =  0)
     @Column(name = "income" , length = 30)
-    private float income;
+    private Float income;
 
     @Column(name = "passport" , length = 30)
     private String passport;
