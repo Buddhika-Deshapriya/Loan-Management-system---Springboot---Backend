@@ -10,7 +10,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor
@@ -58,62 +58,62 @@ public class Customer {
     @Column(name = "membership_no" , length = 50)
     private String membership_no;
 
-    @NotEmpty(message = "Required")
+    @NotEmpty(message = "First name may not be empty")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "first_name" , length = 50)
     private String first_name;
 
-    @NotEmpty(message = "Required")
+    @NotEmpty(message = "Middle name may not be empty")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "middle_name" , length = 50)
     private String middle_name;
 
-//    @NotEmpty(message = "Required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "last_name" , length = 50)
     private String last_name;
 
-    @NotNull(message = "Required")
+    @NotNull(message = "Date of birth may not be empty")
+//    @Future(message = "Date of birth may not be future value")
     @Column(name = "dob" , length = 20)
-    private Date dob;
+    private LocalDate dob;
 
-    @NotNull(message = "Required")
+    @NotNull(message = "NIC may not be empty")
     @Size(min = 10, max = 12, message = "NIC must be between 10 and 12 characters long")
     @Column(name = "nic" , length = 12)
     private String nic;
 
-    @NotNull(message = "Required")
+    @NotNull(message = "Address may not be empty")
     @Column(name = "address" , length = 100)
     private String address;
 
-    @NotNull(message = "Required")
-//    @Length(min = 10, max = 12, message = "Telephone must be between 10 and 12 characters long")
-    @Min(10)
-    @Max(12)
-    @Column(name = "telephone")
+    @NotBlank(message = "Telephone may not be empty")
+    @Pattern(regexp="(^$|[0-9]{10})")
+   // @Range(min = 10, max = 11, message = "Telephone must be 10 characters long")
+//    @Min( value=10 , message = "Telephone must be between 10 and 12 characters long")
+//    @Max( value = 12 , message = "Telephone must be between 10 and 12 characters long")
+    @Column(name = "telephone" , length = 10)
     private Long telephone;
 
-    @NotNull(message = "Required")
-//    @Length(min = 10, max = 12, message = "Mobile must be between 10 and 12 characters long")
-    @Min(10)
-    @Max(12)
-    @Column(name = "mobile")
+    @NotBlank(message = "Mobile may not be empty")
+    @Pattern(regexp="(^$|[0-9]{10})")
+    //@Range(min = 9, max = 11, message = "Mobile must be 10 characters long")
+//    @Min(value=10 , message = "Mobile must be between 10 and 12 characters long")
+//    @Max( value = 12 , message = "Mobile must be between 10 and 12 characters long")
+    @Column(name = "mobile" , length = 10)
     private Long mobile;
 
     @Column(name = "email" , length = 60)
     private String email;
 
-    @NotNull(message = "Required")
-    //@Min( message = "Required", value =  0)
+    @NotNull(message = "Family income may not be empty")
     @Column(name = "family_income" , length = 30)
     private Float familyIncome;
 
-    @NotNull(message = "Required")
+    @NotNull(message = "Total members may not be empty")
     @Column(name = "total_members" , length = 5)
     private Integer total_members;
 
-    @NotNull(message = "Required")
-    //@Min( message = "Required", value =  0)
+    @NotNull(message = "Income may not be empty")
     @Column(name = "income" , length = 30)
     private Float income;
 
