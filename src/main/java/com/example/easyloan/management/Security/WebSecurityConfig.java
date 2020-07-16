@@ -1,6 +1,5 @@
 package com.example.easyloan.management.Security;
 
-import com.example.easyloan.management.Security.Cors.SimpleCORSFilter;
 import com.example.easyloan.management.Security.jwt.JwtAuthEntryPoint;
 import com.example.easyloan.management.Security.jwt.JwtAuthTokenFilter;
 import com.example.easyloan.management.Security.services.UserDetailsServiceImpl;
@@ -16,7 +15,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -65,6 +63,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-        http.addFilterBefore(new SimpleCORSFilter(), ChannelProcessingFilter.class);
     }
 }

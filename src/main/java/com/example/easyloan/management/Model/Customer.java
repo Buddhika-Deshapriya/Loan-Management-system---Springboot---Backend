@@ -59,12 +59,12 @@ public class Customer {
     private String membership_no;
 
     @NotEmpty(message = "First name may not be empty")
-    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
+//    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "first_name" , length = 50)
     private String first_name;
 
     @NotEmpty(message = "Middle name may not be empty")
-    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
+//    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters long")
     @Column(name = "middle_name" , length = 50)
     private String middle_name;
 
@@ -78,7 +78,7 @@ public class Customer {
     private LocalDate dob;
 
     @NotNull(message = "NIC may not be empty")
-    @Size(min = 10, max = 12, message = "NIC must be between 10 and 12 characters long")
+//    @Size(min = 10, max = 12, message = "NIC must be between 10 and 12 characters long")
     @Column(name = "nic" , length = 12)
     private String nic;
 
@@ -87,16 +87,16 @@ public class Customer {
     private String address;
 
     @NotBlank(message = "Telephone may not be empty")
-    @Pattern(regexp="(^$|[0-9]{10})")
-   // @Range(min = 10, max = 11, message = "Telephone must be 10 characters long")
+//    @Pattern(regexp="(^$|[0-9]{10})")
+//    @Range(min = 10, max = 11, message = "Telephone must be 10 characters long")
 //    @Min( value=10 , message = "Telephone must be between 10 and 12 characters long")
 //    @Max( value = 12 , message = "Telephone must be between 10 and 12 characters long")
     @Column(name = "telephone" , length = 10)
     private Long telephone;
 
     @NotBlank(message = "Mobile may not be empty")
-    @Pattern(regexp="(^$|[0-9]{10})")
-    //@Range(min = 9, max = 11, message = "Mobile must be 10 characters long")
+//    @Pattern(regexp="(^$|[0-9]{10})")
+//    @Range(min = 9, max = 11, message = "Mobile must be 10 characters long")
 //    @Min(value=10 , message = "Mobile must be between 10 and 12 characters long")
 //    @Max( value = 12 , message = "Mobile must be between 10 and 12 characters long")
     @Column(name = "mobile" , length = 10)
@@ -106,7 +106,7 @@ public class Customer {
     private String email;
 
     @NotNull(message = "Family income may not be empty")
-    @Column(name = "family_income" , length = 30)
+//    @Column(name = "family_income" , length = 30)
     private Float familyIncome;
 
     @NotNull(message = "Total members may not be empty")

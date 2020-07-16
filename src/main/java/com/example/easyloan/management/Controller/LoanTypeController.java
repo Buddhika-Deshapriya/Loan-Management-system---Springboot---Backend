@@ -4,16 +4,14 @@ import com.example.easyloan.management.Model.LoanType;
 import com.example.easyloan.management.Service.LoanTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/loantype")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoanTypeController {
 
     private LoanTypeService loanTypeService;

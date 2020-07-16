@@ -3,16 +3,14 @@ package com.example.easyloan.management.Controller;
 import com.example.easyloan.management.Model.CustomerLoanAccount;
 import com.example.easyloan.management.Service.CustomerLoanAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("customerloanaccount")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CustomerLoanAccountController {
 
     private CustomerLoanAccountService customerLoanAccountService;

@@ -1,21 +1,17 @@
 package com.example.easyloan.management.Controller;
 
 
-import com.example.easyloan.management.Model.LoanApplicationResponse;
 import com.example.easyloan.management.Model.LoanCashRelease;
-import com.example.easyloan.management.Service.LoanApplicationResponseService;
 import com.example.easyloan.management.Service.LoanCashReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("loancashrelease")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoanCashReleaseController {
 
     private LoanCashReleaseService loanCashReleaseService;
