@@ -94,15 +94,15 @@ public class Customer {
 //    @Range(min = 10, max = 11, message = "Telephone must be 10 characters long")
 //    @Min( value=10 , message = "Telephone must be between 10 and 12 characters long")
 //    @Max( value = 10 , message = "Telephone must be between 10 and 12 characters long")
-    @Column(name = "telephone" , length = 10)
+    @Column(name = "telephone" , length = 11)
     private String telephone;
 
     @NotBlank(message = "Mobile may not be empty")
-    @Pattern(regexp="(^$|[0-9]{10})" , message = "Mobile number must be 10 characters long")
+//    @Pattern(regexp="(^$|[0-9]{10})" , message = "Mobile number must be 10 characters long")
 //    @Range(min = 9, max = 11, message = "Mobile must be 10 characters long")
 //    @Min(value=10 , message = "Mobile must be between 10 and 12 characters long")
 //    @Max( value = 10 , message = "Mobile must be between 10 and 12 characters long")
-    @Column(name = "mobile" , length = 10)
+    @Column(name = "mobile" , length = 11)
     private String mobile;
 
     @Column(name = "email" , length = 60)
