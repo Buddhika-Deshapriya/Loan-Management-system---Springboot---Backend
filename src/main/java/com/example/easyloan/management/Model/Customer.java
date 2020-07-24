@@ -1,6 +1,7 @@
 package com.example.easyloan.management.Model;
 
 
+import com.example.easyloan.management.Validation.Constraint.NicNumberConstraint;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
@@ -78,7 +79,9 @@ public class Customer {
     private LocalDate dob;
 
     @NotNull(message = "NIC may not be empty")
-//    @Size(min = 10, max = 12, message = "NIC must be between 10 and 12 characters long")
+//    @Size(min = 10, max = 10, message = "NIC must be between 10 and 12 characters long")
+//    @Pattern(regexp = "^[0-9]{9}[vV]$" , message = "NIC must be 10 characters long")
+    @NicNumberConstraint
     @Column(name = "nic" , length = 12)
     private String nic;
 
@@ -87,20 +90,20 @@ public class Customer {
     private String address;
 
     @NotBlank(message = "Telephone may not be empty")
-//    @Pattern(regexp="(^$|[0-9]{10})")
+    @Pattern(regexp="(^$|[0-9]{10})" , message = "Telephone number must be 10 characters long")
 //    @Range(min = 10, max = 11, message = "Telephone must be 10 characters long")
 //    @Min( value=10 , message = "Telephone must be between 10 and 12 characters long")
-//    @Max( value = 12 , message = "Telephone must be between 10 and 12 characters long")
+//    @Max( value = 10 , message = "Telephone must be between 10 and 12 characters long")
     @Column(name = "telephone" , length = 10)
-    private Long telephone;
+    private String telephone;
 
     @NotBlank(message = "Mobile may not be empty")
-//    @Pattern(regexp="(^$|[0-9]{10})")
+    @Pattern(regexp="(^$|[0-9]{10})" , message = "Mobile number must be 10 characters long")
 //    @Range(min = 9, max = 11, message = "Mobile must be 10 characters long")
 //    @Min(value=10 , message = "Mobile must be between 10 and 12 characters long")
-//    @Max( value = 12 , message = "Mobile must be between 10 and 12 characters long")
+//    @Max( value = 10 , message = "Mobile must be between 10 and 12 characters long")
     @Column(name = "mobile" , length = 10)
-    private Long mobile;
+    private String mobile;
 
     @Column(name = "email" , length = 60)
     private String email;

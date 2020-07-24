@@ -23,7 +23,7 @@ public class LoanTypeController {
 
 
     @RequestMapping("/add")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('FRO') or hasRole('USER')")
     public LoanType addLoanType(@RequestBody LoanType loanType) throws Exception {
         return loanTypeService.addLoanType(loanType);
     }
@@ -34,7 +34,7 @@ public class LoanTypeController {
     }
 
     @RequestMapping("/list")
-//    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('FRO')")
+    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('FRO') or hasRole('USER')")
     public List<LoanType> loanTypeList(){
         return loanTypeService.loanTypeList();
 
