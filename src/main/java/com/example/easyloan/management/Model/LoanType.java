@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
@@ -26,28 +27,36 @@ public class LoanType {
     @JoinColumn(name = "status_id")
     private CommonStatus status;
 
+    @NotEmpty(message = "Loan type may not be empty")
     @Column(name = "loan_type" , length = 30)
     private String loanType;
 
+    @NotNull(message = "Description may not be empty")
     @Column(name = "description" , length = 150)
     private String description;
 
+    @NotNull(message = "Minimum amount may not be empty")
     @Column(name = "min_amount" , length = 30)
-    private float minAmount;
+    private Float minAmount;
 
+    @NotNull(message = "Maximum amount may not be empty")
     @Column(name = "max_amount" , length = 30)
-    private float maxAmount;
+    private Float maxAmount;
 
+    @NotNull(message = "Minimum interest may not be empty")
     @Column(name = "min_interest_rate" , length = 10)
-    private float minInterestRate;
+    private Float minInterestRate;
 
+    @NotNull(message = "Max interest may not be empty")
     @Column(name = "max_interest_rate" , length = 10)
-    private float maxInterestRate;
+    private Float maxInterestRate;
 
+    @NotNull(message = "Minimum time period may not be empty")
     @Column(name = "min_time_period" , length = 20)
-    private String minTimePeriod;
+    private Integer minTimePeriod;
 
+    @NotNull(message = "Maximum time period may not be empty")
     @Column(name = "max_time_period" , length = 20)
-    private String maxTimePeriod;
+    private Integer maxTimePeriod;
 
 }

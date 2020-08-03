@@ -109,7 +109,7 @@ public class Customer {
     private String email;
 
     @NotNull(message = "Family income may not be empty")
-//    @Column(name = "family_income" , length = 30)
+    @Column(name = "family_income" , length = 30)
     private Float familyIncome;
 
     @NotNull(message = "Total members may not be empty")

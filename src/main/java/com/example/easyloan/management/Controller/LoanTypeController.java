@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/loantype")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoanTypeController {
 
     private LoanTypeService loanTypeService;
@@ -24,7 +25,7 @@ public class LoanTypeController {
 
     @RequestMapping("/add")
     @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('FRO') or hasRole('USER')")
-    public LoanType addLoanType(@RequestBody LoanType loanType) throws Exception {
+    public LoanType addLoanType(@RequestBody @Valid LoanType loanType) throws Exception {
         return loanTypeService.addLoanType(loanType);
     }
 
