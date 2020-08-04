@@ -27,35 +27,42 @@ public class Customer {
     private Integer id;
 
     //Gender of the customer from gender table!
+    @NotNull(message = "Gender may not be empty")
     @OneToOne
     @JoinColumn(name = "gender")
     private Gender gender;
 
     //Title of the customer from title table!
+    @NotNull(message = "Title may not be empty")
     @OneToOne
     @JoinColumn(name = "title")
     private Title title;
 
     //Membership type of the customer from membership type table!
+    @NotNull(message = "Membership type may not be empty")
     @OneToOne
     @JoinColumn(name = "membershipType")
     private MembershipType membershipType;
 
     //Family type of the customer from family type table!
+    @NotNull(message = "Family type may not be empty")
     @OneToOne
     @JoinColumn(name = "familyType")
     private FamilyType familyType;
 
     //If the customer is working or no longer working with the system!
+    @NotNull(message = "Common status may not be empty")
     @OneToOne
     @JoinColumn(name = "customerStatus")
     private CommonStatus customerStatus;
 
     //Mariel status of the customer from married status table!
+    @NotNull(message = "Married status may not be empty")
     @OneToOne
     @JoinColumn(name = "marriedStatus")
     private MarriedStatus marriedStatus;
 
+    @NotNull(message = "Membership number may not be empty")
     @Column(name = "membership_no" , length = 50)
     private String membership_no;
 
@@ -106,6 +113,8 @@ public class Customer {
     private String mobile;
 
     @Column(name = "email" , length = 60)
+    @Size(max = 60)
+    @Email
     private String email;
 
     @NotNull(message = "Family income may not be empty")

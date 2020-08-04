@@ -9,7 +9,7 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,8 +32,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    //@NotBlank(message ="First Name is Required")
-    // @Size(min=3, max = 50)
+//    @NotBlank(message ="First Name is Required")
+//    @Size(min=3, max = 50)
     private String firstName;
 
     private String middleName;
@@ -42,9 +42,11 @@ public class User {
 
     private String address;
 
+    private String mobile;
+
     private Integer nic;
 
-    private Date dob;
+    private LocalDate dob;
 
     @NaturalId
     //@NotBlank(message ="Email is Required")

@@ -24,7 +24,7 @@ public class LoanTypeController {
 
 
     @RequestMapping("/add")
-    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('FRO') or hasRole('USER')")
+    @PreAuthorize("hasRole('DIR') or hasRole('ADMIN') or hasRole('MGR')")
     public LoanType addLoanType(@RequestBody @Valid LoanType loanType) throws Exception {
         return loanTypeService.addLoanType(loanType);
     }

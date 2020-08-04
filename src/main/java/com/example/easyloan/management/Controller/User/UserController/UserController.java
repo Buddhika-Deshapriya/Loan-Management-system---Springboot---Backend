@@ -65,6 +65,7 @@ public class UserController {
                 signUpRequest.getMiddleName(),
                 signUpRequest.getLastName(),
                 signUpRequest.getAddress(),
+                signUpRequest.getMobile(),
                 signUpRequest.getNic(),
                 signUpRequest.getDob(),
                 signUpRequest.getEmail(),
