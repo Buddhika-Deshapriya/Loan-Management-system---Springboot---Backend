@@ -132,6 +132,13 @@ public class Customer {
     @Column(name = "passport" , length = 30)
     private String passport;
 
+    @Column(name = "created_user", length = 150)
+    private String createdUser;
+
+    @Column(name = "created_date", length = 20)
+    private LocalDate createdDate;
+
+
     @ManyToMany(mappedBy = "customers")
     public List<LoanApplication> loanApplications;
 

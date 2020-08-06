@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -23,6 +24,7 @@ public class LoanType {
     private Integer id;
 
     //If the loan type active or inactive!
+    @NotNull(message = "Status may not be empty")
     @OneToOne
     @JoinColumn(name = "status_id")
     private CommonStatus status;
@@ -47,7 +49,7 @@ public class LoanType {
     @Column(name = "min_interest_rate" , length = 10)
     private Float minInterestRate;
 
-    @NotNull(message = "Max interest may not be empty")
+    @NotNull(message = "Maximum interest may not be empty")
     @Column(name = "max_interest_rate" , length = 10)
     private Float maxInterestRate;
 
@@ -58,5 +60,12 @@ public class LoanType {
     @NotNull(message = "Maximum time period may not be empty")
     @Column(name = "max_time_period" , length = 20)
     private Integer maxTimePeriod;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User createdUser;
+
+    @Column(name = "created_date", length = 20)
+    private LocalDate createdDate;
 
 }
