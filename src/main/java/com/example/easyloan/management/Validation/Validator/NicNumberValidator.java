@@ -15,7 +15,7 @@ public class NicNumberValidator implements
     @Override
     public boolean isValid(String nicField,
                            ConstraintValidatorContext cxt) {
-        return (nicField != null && nicField.matches("^[0-9]{10}[vVxX]$")
+        return (nicField.matches("^[0-9]{10}[vVxX]$")
                 && (nicField.length() == 10)) || (nicField.length() == 12 && nicField.matches("[0-9]{12}$")); }
 
 }

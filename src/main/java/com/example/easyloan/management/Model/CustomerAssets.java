@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
@@ -29,11 +30,13 @@ public class CustomerAssets {
     @JoinColumn(name = "assetsType")
     private CustomerAssetsType assetsType;
 
+    @NotNull(message = "Description may not be empty")
     @Column(name = "description")
     private String description;
 
+    @NotNull(message = "Description may not be empty")
     @Column(name = "value" , length = 30)
-    private float value;
+    private Float value;
 
     @ManyToMany
     @JoinTable

@@ -1,7 +1,6 @@
 package com.example.easyloan.management.Model;
 
 
-import com.example.easyloan.management.Validation.Constraint.NicNumberConstraint;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
@@ -88,7 +87,6 @@ public class Customer {
     @NotNull(message = "NIC may not be empty")
 //    @Size(min = 10, max = 10, message = "NIC must be between 10 and 12 characters long")
 //    @Pattern(regexp = "^[0-9]{9}[vV]$" , message = "NIC must be 10 characters long")
-    @NicNumberConstraint
     @Column(name = "nic" , length = 12)
     private String nic;
 
@@ -122,8 +120,8 @@ public class Customer {
     private Float familyIncome;
 
     @NotNull(message = "Total members may not be empty")
-    @Column(name = "total_members" , length = 5)
-    private Integer total_members;
+    @Column(name = "total_members" , length = 10)
+    private String total_members;
 
     @NotNull(message = "Income may not be empty")
     @Column(name = "income" , length = 30)
@@ -132,8 +130,9 @@ public class Customer {
     @Column(name = "passport" , length = 30)
     private String passport;
 
-    @Column(name = "created_user", length = 150)
-    private String createdUser;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User createdUser;
 
     @Column(name = "created_date", length = 20)
     private LocalDate createdDate;

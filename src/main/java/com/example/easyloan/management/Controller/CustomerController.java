@@ -24,22 +24,26 @@ public class CustomerController {
 
 
     @RequestMapping("/add")
-    public Customer addCustomer(@Valid @RequestBody Customer customer) {
-
-        //Validate membership number
- //       String membership_no = customer.getMembership_no();
-        //System.out.println(enteredNumber);
-//        if(membership_no !=  null){
-//            Customer customerObj = customerService.fetchMemershipNo(membership_no);
-//            if(customerObj != null){
-//                throw new ApiRequestException("Membership number exists!");
-//            }
-//        }
-        Customer  customerObj = null;
-        customerObj = customerService.addCustomer(customer);
-        return customerObj;
-
+    public Customer addCustomer(@RequestBody @Valid Customer customer) throws Exception {
+        return customerService.addCustomer(customer);
     }
+//    @RequestMapping("/add")
+//    public Customer addCustomer(@Valid @RequestBody Customer customer) {
+//
+//        //Validate membership number
+// //       String membership_no = customer.getMembership_no();
+//        //System.out.println(enteredNumber);
+////        if(membership_no !=  null){
+////            Customer customerObj = customerService.fetchMemershipNo(membership_no);
+////            if(customerObj != null){
+////                throw new ApiRequestException("Membership number exists!");
+////            }
+////        }
+//        Customer  customerObj = null;
+//        customerObj = customerService.addCustomer(customer);
+//        return customerObj;
+//
+//    }
 
     @RequestMapping("/list/{id}")
     @PreAuthorize("hasRole('DIR') or hasRole('ADMIN')")

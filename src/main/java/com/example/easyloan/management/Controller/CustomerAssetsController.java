@@ -6,6 +6,7 @@ import com.example.easyloan.management.Service.CustomerAssetsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class CustomerAssetsController {
 
 
     @RequestMapping("/add")
-    public CustomerAssets addCustomerAssets(@RequestBody CustomerAssets customerAssets) throws Exception {
+    public CustomerAssets addCustomerAssets(@RequestBody @Valid CustomerAssets customerAssets) throws Exception {
         return customerAssetsService.addCustomerAssets(customerAssets);
     }
 
