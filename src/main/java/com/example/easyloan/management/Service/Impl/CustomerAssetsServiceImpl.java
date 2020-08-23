@@ -34,10 +34,4 @@ public class CustomerAssetsServiceImpl implements CustomerAssetsService {
     public CustomerAssets addCustomerAssets(CustomerAssets customerAssets) {
         return customerAssetsRepository.save(customerAssets);
     }
-
-    @Override
-    public String deleteCustomerAssets(Integer id) {
-        customerAssetsRepository.deleteById(id);
-        return "{'Message' : 'Customer Assets Deleted Successfully!'}";
-    }
 }

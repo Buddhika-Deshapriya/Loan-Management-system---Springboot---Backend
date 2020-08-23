@@ -39,8 +39,4 @@ public class CustomerAssetsController {
 
     }
 
-    @RequestMapping("/delete/{id}")
-    public String deleteCustomerAssets(@PathVariable Integer id) {
-        return customerAssetsService.deleteCustomerAssets(id);
-    }
 }

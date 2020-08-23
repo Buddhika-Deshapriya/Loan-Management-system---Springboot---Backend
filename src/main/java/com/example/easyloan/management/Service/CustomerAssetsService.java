@@ -12,6 +12,4 @@ public interface CustomerAssetsService {
     Optional<CustomerAssets> findById(Integer id);
 
     CustomerAssets addCustomerAssets(CustomerAssets customerAssets);
-
-    String deleteCustomerAssets(Integer id);
 }
