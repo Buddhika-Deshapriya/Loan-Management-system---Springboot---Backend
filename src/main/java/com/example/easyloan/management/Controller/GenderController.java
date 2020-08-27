@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/gender")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class GenderController {
+
     private GenderService genderService;
 
     @Autowired

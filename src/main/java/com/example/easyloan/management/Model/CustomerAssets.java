@@ -36,7 +36,7 @@ public class CustomerAssets {
 
     @NotNull(message = "Description may not be empty")
     @Column(name = "value" , length = 30)
-    private Float value;
+    private Double value;
 
     @ManyToMany
     @JoinTable

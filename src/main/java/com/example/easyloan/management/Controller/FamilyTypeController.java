@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/familytype")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class FamilyTypeController {
+
     private FamilyTypeService familyTypeService;
 
     @Autowired
