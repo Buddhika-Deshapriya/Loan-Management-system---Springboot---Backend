@@ -10,7 +10,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor
@@ -69,9 +69,12 @@ public class LoanApplication {
     @Column(name = "description" , length = 150)
     private String description;
 
-    @NotNull(message = "Create date may not be empty")
-    @Column(name = "createdDate" , length = 30)
-    private Date createdDate;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User createdUser;
+
+    @Column(name = "created_date", length = 20)
+    private LocalDate createdDate;
 
     @ManyToMany
     @JoinTable
