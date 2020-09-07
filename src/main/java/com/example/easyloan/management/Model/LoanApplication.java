@@ -38,6 +38,11 @@ public class LoanApplication {
     @JoinColumn(name = "loanTypeId")
     private LoanType loanTypeId;
 
+    @NotNull(message = "Loan status may not be empty")
+    @OneToOne
+    @JoinColumn(name = "loanStatus")
+    private LoanStatus loanStatus;
+
 //    @OneToOne
 //    @JoinColumn(name = "loanStatusId")
 //    private LoanStatus loanStatusId;
