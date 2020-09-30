@@ -103,7 +103,7 @@ public class Customer {
     private String telephone;
 
     @NotBlank(message = "Mobile may not be empty")
-//    @Pattern(regexp="(^$|[0-9]{10})" , message = "Mobile number must be 10 characters long")
+    @Pattern(regexp="(^$|[0-9]{10})" , message = "Mobile number must be 10 characters long")
 //    @Range(min = 9, max = 11, message = "Mobile must be 10 characters long")
 //    @Min(value=10 , message = "Mobile must be between 10 and 12 characters long")
 //    @Max( value = 10 , message = "Mobile must be between 10 and 12 characters long")

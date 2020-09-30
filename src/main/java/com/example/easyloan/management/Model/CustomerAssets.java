@@ -34,7 +34,7 @@ public class CustomerAssets {
     @Column(name = "description")
     private String description;
 
-    @NotNull(message = "Description may not be empty")
+    @NotNull(message = "Value may not be empty")
     @Column(name = "value" , length = 30)
     private Double value;
 

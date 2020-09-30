@@ -29,7 +29,7 @@ public class LoanApplication {
     //rental type of the loan (monthly, annually, quarter)!
     @NotNull(message = "Rental type may not be empty")
     @OneToOne
-    @JoinColumn(name = "rentalTypeId")
+    @JoinColumn(name = "rental_type_id")
     private RentalType rentalTypeId;
 
     //loan type of the loan (mid term, long term, etc)!
@@ -53,11 +53,11 @@ public class LoanApplication {
 
     @NotNull(message = "Loan amount may not be empty")
     @Column(name = "loanAmount" , length = 30)
-    private float loanAmount;
+    private Float loanAmount;
 
     @NotNull(message = "Effective rate may not be empty")
     @Column(name = "effectiveRate" , length = 10)
-    private float effectiveRate;
+    private Float effectiveRate;
 
     @NotNull(message = "No of rentals may not be empty")
     @Column(name = "noOfRentals" , length = 10)
@@ -69,7 +69,7 @@ public class LoanApplication {
 
     @NotNull(message = "Other charges may not be empty")
     @Column(name = "otherCharges" , length = 30)
-    private float otherCharges;
+    private Float otherCharges;
 
     @Column(name = "description" , length = 150)
     private String description;
