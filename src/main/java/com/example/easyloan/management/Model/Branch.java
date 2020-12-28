@@ -36,7 +36,7 @@ public class Branch {
     @NotNull(message = "Branch status may not be empty")
     @OneToOne
     @JoinColumn(name = "branchStatus")
-    public CommonStatus status;
+    public CommonStatus branchStatus;
 
     @OneToOne
     @JoinColumn(name = "user_id")

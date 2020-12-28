@@ -1,13 +1,16 @@
 package com.example.easyloan.management.Model;
 
 
+import com.example.easyloan.management.Generator.StringPrefixedSequenceIdGenerator;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.GenericGenerator;
 
+import org.hibernate.annotations.Parameter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -43,10 +46,19 @@ public class LoanApplication {
     @JoinColumn(name = "loanStatus")
     private LoanStatus loanStatus;
 
-//    @OneToOne
-//    @JoinColumn(name = "loanStatusId")
-//    private LoanStatus loanStatusId;
+    @NotNull(message = "Branch may not be empty")
+    @OneToOne
+    @JoinColumn(name = "branch")
+    private Branch branch;
 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "app_no")
+    @GenericGenerator(
+            name = "app_no",
+            strategy = "com.example.easyloan.management.Generator.StringPrefixedSequenceIdGenerator",
+            parameters = {
+                    @Parameter( name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "50" ),
+                    @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "APP"),
+                    @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d") })
     private String applicationNo;
 
     private String calculationNo;
