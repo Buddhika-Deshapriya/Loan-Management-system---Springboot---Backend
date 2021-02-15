@@ -54,5 +54,4 @@ public class LoginController {
         return ResponseEntity.ok(new JwtResponse(jwt,userObj));
     }
 
-
 }

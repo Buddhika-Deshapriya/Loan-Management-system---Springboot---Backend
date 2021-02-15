@@ -97,7 +97,6 @@ public class LoanApplication {
     @JoinTable
     private List<Customer> customers;
 
-    //Rajitha
     @ManyToMany(mappedBy = "loanApplications")
     public List<LoanApplicationResponse> loanApplicationResponses;
 
@@ -109,6 +108,5 @@ public class LoanApplication {
 
     @ManyToMany(mappedBy = "loanApps")
     public List<LoanCashRelease> loanCashReleases;
-
 
 }

@@ -21,7 +21,6 @@ public class LoanApplicationController {
         this.loanApplicationService = loanApplicationService;
     }
 
-
     @RequestMapping("/add")
     public LoanApplication addLoanApplication(@RequestBody @Valid LoanApplication loanApplication) throws Exception {
         return loanApplicationService.addLoanApplication(loanApplication);

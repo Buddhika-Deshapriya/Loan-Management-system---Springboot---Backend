@@ -9,6 +9,8 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,13 +57,13 @@ public class User {
     @Column(name = "email" , length = 50)
     private String email;
 
-    //@NotBlank(message ="Username is Required")
-    //@Size(min=3, max = 50)
+    @NotBlank(message ="User Name is Required")
+    @Size(min=3, max = 50)
     @Column(name = "username" , length = 50)
     private String username;
 
-    //@NotBlank(message ="Password is Required")
-    //@Column(name = "password")
+    @NotBlank(message ="Password is Required")
+    @Column(name = "password")
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
