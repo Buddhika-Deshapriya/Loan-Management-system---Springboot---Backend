@@ -13,7 +13,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/branch")
 public class BranchController {
-
     private BranchService branchService;
 
     @Autowired
@@ -34,6 +33,5 @@ public class BranchController {
     @RequestMapping("/list")
     public List<Branch> branchList(){
         return branchService.branchList();
-
     }
 }
