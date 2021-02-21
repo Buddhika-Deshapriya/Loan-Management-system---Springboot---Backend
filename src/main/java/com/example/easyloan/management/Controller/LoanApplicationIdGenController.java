@@ -27,10 +27,9 @@ public class LoanApplicationIdGenController {
         String app_id = loanApplicationIdGenService.AppList().get(0).getApplicationNo();
         String calc_id = loanApplicationIdGenService.AppList().get(0).getCalculationNo();
         Integer id = loanApplicationIdGenService.AppList().get(0).getId();
-
         Integer uid = ++id;
-        String final_app_id = "LN-SS-"+ app_id +"-"+ uid;
-        String final_calc_id = "LN-SS-"+ calc_id +"-"+ uid;
+        String final_app_id = "LN-AN-" + uid;
+        String final_calc_id = "LN-CN-"+ uid;
         loanApplicationIdGenService.AppList().get(0).setApplicationNo(final_app_id);
         loanApplicationIdGenService.AppList().get(0).setCalculationNo(final_calc_id);
         return loanApplicationIdGenService.AppList();
