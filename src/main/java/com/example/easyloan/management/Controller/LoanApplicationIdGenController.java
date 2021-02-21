@@ -15,7 +15,6 @@ import java.util.List;
 public class LoanApplicationIdGenController {
     private LoanApplicationIdGenService loanApplicationIdGenService;
 
-
     @Autowired
     public LoanApplicationIdGenController(LoanApplicationIdGenService loanAppIdGenService) {
         this.loanApplicationIdGenService = loanAppIdGenService;
@@ -33,8 +32,5 @@ public class LoanApplicationIdGenController {
         loanApplicationIdGenService.AppList().get(0).setApplicationNo(final_app_id);
         loanApplicationIdGenService.AppList().get(0).setCalculationNo(final_calc_id);
         return loanApplicationIdGenService.AppList();
-
-
-
     }
 }
