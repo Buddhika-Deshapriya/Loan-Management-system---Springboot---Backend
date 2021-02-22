@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/loanapplicationinvoicenumbergenerate")
+@RequestMapping("/branchcodegenerate")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BranchCodeGenController {
     private BranchCodeGenService branchCodeGenService;
