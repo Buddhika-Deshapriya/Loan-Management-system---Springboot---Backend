@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.HashSet;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,8 +29,13 @@ public class LoanApplicationResponse {
     private float acceptedAmount;
 
     //date field
+    @Column(name = "created_date", length = 20)
+    private LocalDate createdDate;
 
     //user field
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User createdUser;
 
     //If the loan approved, pending , released or rejected
     @OneToOne
