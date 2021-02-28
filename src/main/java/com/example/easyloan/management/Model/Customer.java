@@ -2,6 +2,7 @@ package com.example.easyloan.management.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -137,7 +138,7 @@ public class Customer {
     @Column(name = "created_date", length = 20)
     private LocalDate createdDate;
 
-
+    @JsonIgnore
     @ManyToMany(mappedBy = "customers")
     public List<LoanApplication> loanApplications;
 

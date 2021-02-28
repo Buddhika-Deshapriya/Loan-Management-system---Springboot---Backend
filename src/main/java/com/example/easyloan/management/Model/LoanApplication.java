@@ -9,8 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
-
 import org.hibernate.annotations.Parameter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -93,16 +93,18 @@ public class LoanApplication {
     @Column(name = "created_date", length = 20)
     private LocalDate createdDate;
 
+    //@JsonBackReference
     @ManyToMany
     @JoinTable
     private List<Customer> customers;
+
+
 
     @ManyToMany(mappedBy = "loanApplications")
     public List<LoanApplicationResponse> loanApplicationResponses;
 
     @ManyToMany(mappedBy = "loanApplicationsList")
     public List<LoanApplicationDirectorResponse> loanApplicationDirectorResponses;
-
 
     //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 

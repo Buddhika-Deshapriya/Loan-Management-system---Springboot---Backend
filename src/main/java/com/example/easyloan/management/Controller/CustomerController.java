@@ -23,7 +23,7 @@ public class CustomerController {
     }
 
 
-    @RequestMapping("/add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public Customer addCustomer(@RequestBody @Valid Customer customer) throws Exception {
         return customerService.addCustomer(customer);
     }

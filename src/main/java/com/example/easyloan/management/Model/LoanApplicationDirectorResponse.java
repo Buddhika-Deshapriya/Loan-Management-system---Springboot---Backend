@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor
@@ -35,8 +36,14 @@ public class LoanApplicationDirectorResponse {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "authorizedPerson" , length = 30)
-    private Integer authorizedPerson;
+    //date field
+    @Column(name = "created_date", length = 20)
+    private LocalDate createdDate;
+
+    //user field
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User createdUser;
 
     @ManyToMany
     @JoinTable
