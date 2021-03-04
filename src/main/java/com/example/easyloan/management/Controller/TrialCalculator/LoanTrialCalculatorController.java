@@ -7,6 +7,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/loancalc")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -18,7 +20,7 @@ public class LoanTrialCalculatorController {
 
     @RequestMapping(value = "/show", method = RequestMethod.POST)
     @PreAuthorize("hasRole('DIR') or hasRole('ADMIN')")
-    public MonthlyAmortizationSchedule calculatePayments(@RequestBody MonthlyAmortizationSchedule monthlyAmortizationSchedule  , BindingResult bindingResult){
+    public MonthlyAmortizationSchedule calculatePayments(@RequestBody @Valid MonthlyAmortizationSchedule monthlyAmortizationSchedule  , BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             System.out.println( "There are errors! " + bindingResult.getAllErrors().toString() );
         }

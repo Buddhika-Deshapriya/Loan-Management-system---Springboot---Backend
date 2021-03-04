@@ -2,16 +2,26 @@ package com.example.easyloan.management.Model.TrialCalculatorModel;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class MonthlyAmortizationSchedule {
+
+    @NotNull(message = "Starting date should not be empty")
     @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date startDate;
+
+    @NotNull(message = "Loan amount should not be empty")
     private double initialBalance;
+
+    @NotNull(message = "Interest rate should not be empty")
     private double interestRate;
+
+    @NotNull(message = "Duration in months should not be empty")
     private int durationInMonths;
+
     private double futureValue;
     private int paymentType;
     private double monthlyPayment;

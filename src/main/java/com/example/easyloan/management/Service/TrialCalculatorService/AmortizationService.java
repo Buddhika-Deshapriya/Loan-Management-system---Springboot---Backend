@@ -79,7 +79,6 @@ public class AmortizationService {
             long finalInterestPaid = (long) Math.abs(newInterestPaid);
             Payment payment = new Payment(paymentNumber, loopDate, newBalance, finalPrincipalPaid, finalInterestPaid,
                      finalAccumulatedInterest);
-
             paymentList.add(payment);
 
             if (paymentType == 1) {
