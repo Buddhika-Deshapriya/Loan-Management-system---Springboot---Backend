@@ -69,9 +69,16 @@ public class AmortizationService {
                     paymentNumber, durationInMonths, initialBalance, futureValue, paymentType);
             balance = balance + principalPaid;
             accumulatedInterest += interestPaid;
+            long newBalance = Math.round(balance);
+            long newAccumulatedInterest = Math.round(accumulatedInterest);
+            long newPrincipalPaid = Math.round(principalPaid);
+            long newInterestPaid = Math.round(interestPaid);
 
-            Payment payment = new Payment(paymentNumber, loopDate, balance, principalPaid, interestPaid,
-                    accumulatedInterest);
+            long finalAccumulatedInterest = Math.abs(newAccumulatedInterest);
+            long finalPrincipalPaid = (long) Math.abs(newPrincipalPaid);
+            long finalInterestPaid = (long) Math.abs(newInterestPaid);
+            Payment payment = new Payment(paymentNumber, loopDate, newBalance, finalPrincipalPaid, finalInterestPaid,
+                     finalAccumulatedInterest);
 
             paymentList.add(payment);
 

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,6 +26,8 @@ public class LoanApplicationResponse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //Manager accepted amount
+    @NotNull(message = "Accepted Amount may not be empty")
     @Column(name = "acceptedAmount", length = 30)
     private float acceptedAmount;
 
@@ -38,11 +41,13 @@ public class LoanApplicationResponse {
     private User createdUser;
 
     //If the loan approved, pending , released or rejected
+    @NotNull(message = "Loan status may not be empty")
     @OneToOne
     @JoinColumn(name = "loanStatusId")
     private LoanStatus loanStatus;
 
     //Description of the response
+    @NotNull(message = "Description may not be empty")
     @Column(name = "description")
     private String description;
 

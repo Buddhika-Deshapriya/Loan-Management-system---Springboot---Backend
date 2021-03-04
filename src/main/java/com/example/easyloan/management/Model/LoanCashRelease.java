@@ -1,9 +1,6 @@
 package com.example.easyloan.management.Model;
 
-import com.example.easyloan.management.Service.LoanCashReleaseService;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,8 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor
@@ -21,21 +18,39 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "tbl_loan_cash_release")
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class LoanCashRelease  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotNull(message = "Voucher no may not be empty")
+    @Column(name = "voucherNo" , length = 30)
+    private String voucherNo;
+
+    @NotNull(message = "Release amount may not be empty")
+    @Column(name = "releaseAmount" , length = 30)
+    private Float releaseAmount;
+
+    //If the loan approved, pending , released or rejected
+    @NotNull(message = "Loan status may not be empty")
+    @OneToOne
+    @JoinColumn(name = "loanStatusId")
+    private LoanStatus loanStatus;
+
+    @NotNull(message = "Description may not be empty")
     @Column(name = "description")
     private String description;
 
-    @Column(name = "releasedDate")
-    private Date releasedDate;
+    //date field
+    @Column(name = "created_date", length = 20)
+    private LocalDate createdDate;
 
-    @Column(name = "authorizedPerson" , length = 30)
-    private Integer authorizedPerson;
+    //user field
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User createdUser;
 
     @ManyToMany
     @JoinTable

@@ -6,6 +6,7 @@ import com.example.easyloan.management.Service.LoanCashReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class LoanCashReleaseController {
 
 
     @RequestMapping("/add")
-    public LoanCashRelease addLoanCashRelease(@RequestBody LoanCashRelease loanCashRelease) throws Exception {
+    public LoanCashRelease addLoanCashRelease(@RequestBody @Valid LoanCashRelease loanCashRelease) throws Exception {
         return loanCashReleaseService.addLoanCashRelease(loanCashRelease);
     }
 

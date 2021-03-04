@@ -5,6 +5,7 @@ import com.example.easyloan.management.Service.LoanApplicationDirectorResponseSe
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,7 @@ public class LoanApplicationDirectorResponseController {
 
 
     @RequestMapping("/add")
-    public LoanApplicationDirectorResponse addLoanApplicationDirectorResponse(@RequestBody LoanApplicationDirectorResponse loanApplicationDirectorResponse) throws Exception {
+    public LoanApplicationDirectorResponse addLoanApplicationDirectorResponse(@RequestBody @Valid LoanApplicationDirectorResponse loanApplicationDirectorResponse) throws Exception {
         return loanApplicationDirectorResponseService.addLoanApplicationDirectorResponse(loanApplicationDirectorResponse);
     }
 

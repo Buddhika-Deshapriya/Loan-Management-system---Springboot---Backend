@@ -1,15 +1,12 @@
 package com.example.easyloan.management.Model;
 
 
-import com.example.easyloan.management.Generator.StringPrefixedSequenceIdGenerator;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -51,16 +48,10 @@ public class LoanApplication {
     @JoinColumn(name = "branch")
     private Branch branch;
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "app_no")
-    @GenericGenerator(
-            name = "app_no",
-            strategy = "com.example.easyloan.management.Generator.StringPrefixedSequenceIdGenerator",
-            parameters = {
-                    @Parameter( name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "50" ),
-                    @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "APP"),
-                    @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d") })
+    @NotNull(message = "Application no may not be empty")
     private String applicationNo;
 
+    @NotNull(message = "Calculation no may not be empty")
     private String calculationNo;
 
     @NotNull(message = "Loan amount may not be empty")
@@ -83,6 +74,7 @@ public class LoanApplication {
     @Column(name = "otherCharges" , length = 30)
     private Float otherCharges;
 
+    @NotNull(message = "Description may not be empty")
     @Column(name = "description" , length = 150)
     private String description;
 
