@@ -90,12 +90,10 @@ public class LoanApplication {
     @JoinTable
     private List<Customer> customers;
 
-
-
-    @ManyToMany(mappedBy = "loanApplications")
+    @ManyToMany(mappedBy = "loanApplications", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<LoanApplicationResponse> loanApplicationResponses;
 
-    @ManyToMany(mappedBy = "loanApplicationsList")
+    @ManyToMany(mappedBy = "loanApplicationsList" , fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<LoanApplicationDirectorResponse> loanApplicationDirectorResponses;
 
     //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

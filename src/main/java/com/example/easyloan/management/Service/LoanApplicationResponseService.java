@@ -14,4 +14,5 @@ public interface LoanApplicationResponseService {
     LoanApplicationResponse addLoanApplicationResponse(LoanApplicationResponse loanApplicationResponse);
 
     String deleteLoanApplicationResponse(Integer id);
+
 }

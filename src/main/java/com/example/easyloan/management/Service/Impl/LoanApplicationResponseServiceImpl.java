@@ -32,6 +32,7 @@ public class LoanApplicationResponseServiceImpl implements LoanApplicationRespon
 
     @Override
     public LoanApplicationResponse addLoanApplicationResponse(LoanApplicationResponse loanApplicationResponse) {
+        //To Do Add status for loan  and other logic as well for loan
         return loanApplicationResponseRepository.save(loanApplicationResponse);
     }
 
