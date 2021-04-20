@@ -1,7 +1,9 @@
 package com.example.easyloan.management.Controller;
 
 
+import com.example.easyloan.management.Model.LoanApplication;
 import com.example.easyloan.management.Model.LoanCashRelease;
+import com.example.easyloan.management.Service.LoanApplicationService;
 import com.example.easyloan.management.Service.LoanCashReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,15 +18,19 @@ import java.util.Optional;
 public class LoanCashReleaseController {
 
     private LoanCashReleaseService loanCashReleaseService;
+    private LoanApplicationService loanApplicationService;
 
     @Autowired
-    public LoanCashReleaseController(LoanCashReleaseService loanCashReleaseService){
+    public LoanCashReleaseController(LoanCashReleaseService loanCashReleaseService ,LoanApplicationService loanApplicationService){
         this.loanCashReleaseService = loanCashReleaseService;
+        this.loanApplicationService=loanApplicationService;
     }
 
 
     @RequestMapping("/add")
     public LoanCashRelease addLoanCashRelease(@RequestBody @Valid LoanCashRelease loanCashRelease) throws Exception {
+        Optional<LoanApplication> loanApplication = loanApplicationService.findById(loanCashRelease.getId());
+        loanApplication.get().setLoanStatus(loanCashRelease.getLoanStatus());
         return loanCashReleaseService.addLoanCashRelease(loanCashRelease);
     }
 

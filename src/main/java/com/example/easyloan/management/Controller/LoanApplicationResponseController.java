@@ -4,7 +4,6 @@ import com.example.easyloan.management.Model.LoanApplication;
 import com.example.easyloan.management.Model.LoanApplicationResponse;
 import com.example.easyloan.management.Service.LoanApplicationResponseService;
 import com.example.easyloan.management.Service.LoanApplicationService;
-import com.example.easyloan.management.Service.LoanStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +20,7 @@ public class LoanApplicationResponseController {
     private LoanApplicationService loanApplicationService;
 
     @Autowired
-    public LoanApplicationResponseController(LoanApplicationResponseService loanApplicationResponseService,LoanApplicationService loanApplicationService,LoanStatusService loanStatusService){
+    public LoanApplicationResponseController(LoanApplicationResponseService loanApplicationResponseService,LoanApplicationService loanApplicationService){
         this.loanApplicationResponseService = loanApplicationResponseService;
         this.loanApplicationService=loanApplicationService;
     }
