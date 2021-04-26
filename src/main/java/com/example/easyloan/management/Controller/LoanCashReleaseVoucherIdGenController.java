@@ -27,7 +27,7 @@ public class LoanCashReleaseVoucherIdGenController {
         String voucher_id = loanCashReleaseVoucherIdGenService.CashList().get(0).getVoucherNo();
         Integer id = loanCashReleaseVoucherIdGenService.CashList().get(0).getId();
         Integer uid = ++id;
-        String final_voucher_id = "Voucher-"+ uid;
+        String final_voucher_id = "LN/COP-"+ uid;
         loanCashReleaseVoucherIdGenService.CashList().get(0).setVoucherNo(final_voucher_id);
         return loanCashReleaseVoucherIdGenService.CashList();
     }
