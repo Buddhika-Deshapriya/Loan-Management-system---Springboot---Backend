@@ -19,6 +19,7 @@ public class TitleController {
     public TitleController(TitleService titleService){
         this.titleService = titleService;
     }
+
     @RequestMapping("/list")
     public List<Title> titleList(){
         return titleService.titleList();

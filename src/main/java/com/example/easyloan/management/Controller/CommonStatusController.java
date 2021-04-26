@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("commonstatus")
+@RequestMapping("/commonstatus")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CommonStatusController {
     private CommonStatusService commonStatusService;
