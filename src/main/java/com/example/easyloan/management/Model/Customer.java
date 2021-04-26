@@ -145,5 +145,7 @@ public class Customer {
     @ManyToMany(mappedBy = "customers")
     public List<CustomerAssets> customerAssets;
 
-
+    @ManyToMany
+    @JoinTable
+    private List<Payment> customerAccounts;
 }
