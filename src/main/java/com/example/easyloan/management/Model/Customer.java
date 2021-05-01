@@ -148,7 +148,8 @@ public class Customer {
     @ManyToMany(mappedBy = "customers")
     public List<CustomerAssets> customerAssets;
 
-    @ManyToMany
-    @JoinTable
-    private List<Payment> customerPayment;
+    @ManyToMany(mappedBy = "customers" , fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public List<Payment> payments;
+
+
 }
