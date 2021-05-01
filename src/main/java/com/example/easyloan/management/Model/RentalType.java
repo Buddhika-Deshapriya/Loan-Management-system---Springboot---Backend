@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+/*
+* Model class of rental type
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

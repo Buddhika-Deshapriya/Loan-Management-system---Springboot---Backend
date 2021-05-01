@@ -15,6 +15,9 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+* Model class of user
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

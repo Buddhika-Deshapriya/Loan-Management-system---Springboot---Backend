@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/*
+* Model class of membership type
+*/
 @NoArgsConstructor
 @Data
 @AllArgsConstructor

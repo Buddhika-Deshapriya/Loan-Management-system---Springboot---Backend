@@ -3,10 +3,11 @@ package com.example.easyloan.management.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 import javax.persistence.*;
-
+/*
+* Model class of common status
+*/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

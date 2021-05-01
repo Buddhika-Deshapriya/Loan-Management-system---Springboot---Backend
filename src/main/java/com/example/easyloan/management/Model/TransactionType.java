@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+/*
+* Model class of transaction type
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

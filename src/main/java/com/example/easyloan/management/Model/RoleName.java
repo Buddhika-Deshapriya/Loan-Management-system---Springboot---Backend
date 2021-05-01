@@ -1,5 +1,8 @@
 package com.example.easyloan.management.Model;
 
+/*
+* Model class of role name
+*/
 public enum  RoleName {
     ROLE_USER,
     ROLE_FRO,

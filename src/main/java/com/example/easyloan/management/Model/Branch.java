@@ -10,6 +10,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+/*
+* Model class of branch
+*/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

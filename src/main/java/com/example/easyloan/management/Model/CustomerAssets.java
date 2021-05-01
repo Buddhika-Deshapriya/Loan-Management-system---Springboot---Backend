@@ -10,6 +10,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+/*
+* Model class of customer assets
+*/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

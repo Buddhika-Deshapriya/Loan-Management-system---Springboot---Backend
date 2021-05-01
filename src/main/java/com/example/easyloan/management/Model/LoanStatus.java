@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+/*
+* Model class of loan status
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

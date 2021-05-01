@@ -12,6 +12,9 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+* Model class of loan application response
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

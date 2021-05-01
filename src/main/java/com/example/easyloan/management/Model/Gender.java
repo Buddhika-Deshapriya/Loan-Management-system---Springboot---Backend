@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
+/*
+* Model class of gender
+*/
 @NoArgsConstructor
 @Data
 @AllArgsConstructor

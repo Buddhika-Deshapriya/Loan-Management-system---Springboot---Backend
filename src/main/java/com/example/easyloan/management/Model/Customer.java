@@ -14,6 +14,9 @@ import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+* Model class of customer
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

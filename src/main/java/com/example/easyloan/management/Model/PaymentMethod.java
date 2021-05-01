@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+/*
+* Model class of payment method
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/*
+* Model class of customer loan account
+*/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

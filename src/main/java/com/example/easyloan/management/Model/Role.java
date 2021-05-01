@@ -8,6 +8,9 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
+/*
+* Model class of role
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

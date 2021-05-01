@@ -10,6 +10,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+/*
+* Model class of loan type
+*/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
