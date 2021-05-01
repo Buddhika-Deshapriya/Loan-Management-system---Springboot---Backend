@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+* Repository interface for customer
+*/
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {
     @Query(value="SELECT *  FROM tbl_customer ORDER BY id DESC LIMIT 1", nativeQuery = true)

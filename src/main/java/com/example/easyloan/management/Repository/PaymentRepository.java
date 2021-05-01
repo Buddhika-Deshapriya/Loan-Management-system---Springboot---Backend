@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+* Repository interface for payments
+*/
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment,Integer> {
     @Query(value="SELECT *  FROM tbl_payments ORDER BY id DESC LIMIT 1", nativeQuery = true)

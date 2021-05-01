@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+Repository interface loan application for customer
+*/
 @Repository
 public interface LoanApplicationRepository extends JpaRepository<LoanApplication, Integer> {
 

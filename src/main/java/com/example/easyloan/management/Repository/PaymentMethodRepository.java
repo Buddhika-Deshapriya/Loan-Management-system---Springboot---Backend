@@ -4,6 +4,9 @@ import com.example.easyloan.management.Model.PaymentMethod;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+/*
+* Repository interface for payment method
+*/
 @Repository
 public interface PaymentMethodRepository extends JpaRepository<PaymentMethod, Integer> {
 }
