@@ -147,5 +147,5 @@ public class Customer {
 
     @ManyToMany
     @JoinTable
-    private List<Payment> customerAccounts;
+    private List<Payment> customerPayment;
 }

@@ -40,7 +40,7 @@ public class Payment {
     @JoinColumn(name = "paymentMethod")
     private PaymentMethod paymentMethod;
 
-    @ManyToMany(mappedBy = "customerAccounts" , fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "customerPayment" , fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Customer> customers;
 
     @OneToOne
