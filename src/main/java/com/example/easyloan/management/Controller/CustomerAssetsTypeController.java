@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for customer assets type
+ */
 @RestController
 @RequestMapping("/customerassetstype")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for title type
+ */
 @RestController
 @RequestMapping("/title")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

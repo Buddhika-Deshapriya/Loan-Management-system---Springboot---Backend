@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for gender type
+ */
 @RestController
 @RequestMapping("/gender")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

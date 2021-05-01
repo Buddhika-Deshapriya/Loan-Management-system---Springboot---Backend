@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for membership type
+ */
 @RestController
 @RequestMapping("/membershiptype")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

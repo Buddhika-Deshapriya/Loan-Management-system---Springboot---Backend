@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for married status
+ */
 @RestController
 @RequestMapping("/marriedstatus")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

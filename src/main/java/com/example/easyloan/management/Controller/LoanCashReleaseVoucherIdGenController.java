@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for loan cash release voucher id generate
+ */
 @RestController
 @RequestMapping("/loancashreleasevoucheridgen")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

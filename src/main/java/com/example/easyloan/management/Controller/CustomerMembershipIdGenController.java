@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for customer generated membership no
+ */
 @RestController
 @RequestMapping("/customergenmembershipno")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

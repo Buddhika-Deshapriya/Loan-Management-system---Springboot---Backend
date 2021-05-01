@@ -12,6 +12,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Controller for loan cash release
+ */
 @RestController
 @RequestMapping("loancashrelease")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

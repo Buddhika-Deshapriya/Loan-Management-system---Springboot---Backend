@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for transaction type
+ */
 @RestController
 @RequestMapping("/transactiontype")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

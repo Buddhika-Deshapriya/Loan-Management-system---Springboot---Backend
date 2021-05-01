@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ * Controller for branch code generate
+ */
 @RestController
 @RequestMapping("/branchcodegenerate")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

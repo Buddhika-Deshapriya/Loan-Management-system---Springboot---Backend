@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+ * Controller for payment voucher id generate
+ */
 @RestController
 @RequestMapping("/paymentvoucherid")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

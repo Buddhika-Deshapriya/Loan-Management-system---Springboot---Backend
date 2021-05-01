@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Controller for customer savings account
+ */
 @RestController
 @RequestMapping("customersavingaccount")
 @CrossOrigin(origins = "*", allowedHeaders = "*")

@@ -10,6 +10,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Controller for loan type
+ */
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/loantype")

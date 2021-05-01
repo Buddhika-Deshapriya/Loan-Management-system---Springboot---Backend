@@ -11,6 +11,9 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Controller for loan application director response
+ */
 @RestController
 @RequestMapping("directorresponse")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
