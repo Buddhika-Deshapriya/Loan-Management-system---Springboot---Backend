@@ -5,6 +5,9 @@ import com.example.easyloan.management.Model.CustomerLoanAccount;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service for customer loan account
+ */
 public interface CustomerLoanAccountService {
 
     List<CustomerLoanAccount> customerLoanAccountList();

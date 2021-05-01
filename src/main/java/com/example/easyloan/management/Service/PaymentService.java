@@ -5,6 +5,9 @@ import com.example.easyloan.management.Model.Payment;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service for payments
+ */
 public interface PaymentService {
     List<Payment> paymentList();
 

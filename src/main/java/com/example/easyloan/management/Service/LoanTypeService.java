@@ -5,6 +5,9 @@ import com.example.easyloan.management.Model.LoanType;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service for loan type
+ */
 public interface LoanTypeService {
     List<LoanType> loanTypeList();
 

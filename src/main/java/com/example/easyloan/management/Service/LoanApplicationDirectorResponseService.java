@@ -5,6 +5,9 @@ import com.example.easyloan.management.Model.LoanApplicationDirectorResponse;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service for loan application director response
+ */
 public interface LoanApplicationDirectorResponseService {
     List<LoanApplicationDirectorResponse> loanApplicationDirectorResponseList();
 

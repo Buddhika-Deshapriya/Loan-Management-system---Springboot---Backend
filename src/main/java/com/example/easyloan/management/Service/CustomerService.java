@@ -5,6 +5,9 @@ import com.example.easyloan.management.Model.Customer;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service for customer
+ */
 public interface CustomerService {
     List<Customer> customerList();
 
