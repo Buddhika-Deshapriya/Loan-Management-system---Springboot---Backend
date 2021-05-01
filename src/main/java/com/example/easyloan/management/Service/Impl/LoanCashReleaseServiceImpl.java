@@ -1,7 +1,6 @@
 package com.example.easyloan.management.Service.Impl;
 
 import com.example.easyloan.management.Model.LoanCashRelease;
-import com.example.easyloan.management.Repository.LoanApplicationRepository;
 import com.example.easyloan.management.Repository.LoanCashReleaseRepository;
 import com.example.easyloan.management.Service.LoanCashReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service implementation for loan cash release service
+ */
 @Service
 public class LoanCashReleaseServiceImpl implements LoanCashReleaseService {
 

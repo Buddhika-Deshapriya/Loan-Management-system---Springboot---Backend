@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for payment method service
+ */
 @Service
 public class PaymentMethodServiceImpl implements PaymentMethodService {
     private PaymentMethodRepository paymentMethodRepository;

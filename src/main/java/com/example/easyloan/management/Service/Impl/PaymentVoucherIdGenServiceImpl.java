@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for payment voucher id generate service
+ */
 @Service
 public class PaymentVoucherIdGenServiceImpl implements PaymentVoucherIdGenService {
     private PaymentRepository paymentRepository;

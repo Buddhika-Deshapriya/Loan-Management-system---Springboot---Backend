@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for loan status service
+ */
 @Service
 public class LoanStatusServiceImpl implements LoanStatusService {
     private LoanStatusRepository loanStatusRepository;

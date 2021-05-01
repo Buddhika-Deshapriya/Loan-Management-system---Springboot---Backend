@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for rental type service
+ */
 @Service
 public class RentalTypeServiceImpl implements RentalTypeService {
     private RentalTypeRepository rentalTypeRepository;

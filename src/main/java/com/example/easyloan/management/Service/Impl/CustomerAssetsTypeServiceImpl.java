@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for customer assets type service
+ */
 @Service
 public class CustomerAssetsTypeServiceImpl implements CustomerAssetsTypeService {
 

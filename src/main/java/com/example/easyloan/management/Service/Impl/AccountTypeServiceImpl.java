@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+* Service implementation for account type service
+*/
 @Service
 public class AccountTypeServiceImpl implements AccountTypeService {
     private AccountTypeRepository accountTypeRepository;

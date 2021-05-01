@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for married status service
+ */
 @Service
 public class MarriedStatusServiceImpl implements MarriedStatusService {
     private MarriedStatusRepository marriedStatusRepository;

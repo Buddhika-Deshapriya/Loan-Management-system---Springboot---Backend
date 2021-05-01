@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for customer membership id generate service
+ */
 @Service
 public class CustomerMembershipIdGenServiceImpl implements CustomerMembershipIdGenService {
     private CustomerRepository customerRepository;

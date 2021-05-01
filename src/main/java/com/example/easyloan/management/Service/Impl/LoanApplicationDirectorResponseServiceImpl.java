@@ -2,7 +2,6 @@ package com.example.easyloan.management.Service.Impl;
 
 import com.example.easyloan.management.Model.LoanApplicationDirectorResponse;
 import com.example.easyloan.management.Repository.LoanApplicationDirectorResponseRepository;
-import com.example.easyloan.management.Repository.LoanApplicationResponseRepository;
 import com.example.easyloan.management.Service.LoanApplicationDirectorResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service implementation for loan application director service
+ */
 @Service
 public class LoanApplicationDirectorResponseServiceImpl implements LoanApplicationDirectorResponseService {
 

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for common status service
+ */
 @Service
 public class CommonStatusServiceImpl implements CommonStatusService {
 

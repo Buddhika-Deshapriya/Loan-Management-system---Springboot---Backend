@@ -2,7 +2,6 @@ package com.example.easyloan.management.Service.Impl;
 
 import com.example.easyloan.management.Model.CustomerLoanAccount;
 import com.example.easyloan.management.Repository.CustomerLoanAccountRepository;
-import com.example.easyloan.management.Repository.CustomerRepository;
 import com.example.easyloan.management.Service.CustomerLoanAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service implementation for customer loan account service
+ */
 @Service
 public class CustomerLoanAccountServiceImpl implements CustomerLoanAccountService {
 

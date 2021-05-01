@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+* Service implementation for branch code service
+*/
 @Service
 public class BranchCodeGenServiceImpl implements BranchCodeGenService {
     private BranchRepository branchRepository;

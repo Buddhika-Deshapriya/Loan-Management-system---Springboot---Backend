@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service implementation for branch service
+ */
 @Service
 public class BranchServiceImpl implements BranchService {
     private BranchRepository branchRepository;

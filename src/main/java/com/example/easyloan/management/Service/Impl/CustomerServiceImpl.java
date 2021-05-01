@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
+ * Service implementation for customer service
+ */
 @Service
 public class CustomerServiceImpl implements CustomerService {
 

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for family type service
+ */
 @Service
 public class FamilyTypeServiceImpl implements FamilyTypeService {
     private FamilyTypeRepository familyTypeRepository;

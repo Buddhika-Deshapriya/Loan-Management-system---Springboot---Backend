@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for title service
+ */
 @Service
 public class TitleServiceImpl implements TitleService {
     private TitleRepository titleRepository;

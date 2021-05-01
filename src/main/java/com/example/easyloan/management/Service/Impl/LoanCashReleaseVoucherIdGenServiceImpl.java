@@ -1,7 +1,6 @@
 package com.example.easyloan.management.Service.Impl;
 
 import com.example.easyloan.management.Model.LoanCashRelease;
-import com.example.easyloan.management.Repository.LoanApplicationRepository;
 import com.example.easyloan.management.Repository.LoanCashReleaseRepository;
 import com.example.easyloan.management.Service.LoanCashReleaseVoucherIdGenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for loan cash release voucher id generate service
+ */
 @Service
 public class LoanCashReleaseVoucherIdGenServiceImpl implements LoanCashReleaseVoucherIdGenService {
     private LoanCashReleaseRepository loanCashReleaseRepository;

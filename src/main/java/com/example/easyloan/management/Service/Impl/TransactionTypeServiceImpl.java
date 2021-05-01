@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for transaction type service
+ */
 @Service
 public class TransactionTypeServiceImpl implements TransactionTypeService {
     private TransactionTypeRepository transactionTypeRepository;

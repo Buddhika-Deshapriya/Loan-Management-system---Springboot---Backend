@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+ * Service implementation for loan application id generate service
+ */
 @Service
 public class LoanApplicationIDGenServiceImpl implements LoanApplicationIdGenService {
     private LoanApplicationRepository loanApplicationRepository;
